@@ -8,7 +8,7 @@ import { MongoMemoryServer } from "mongodb-memory-server";
 
 const LOCAL = "mongodb://127.0.0.1:27017";
 let practice = null;
-let client = null;
+let client = new MongoClient('mongodb+srv://xanderlagamer_db_user:hADjffdiDfPOhOVn@cluster0.anp6pas.mongodb.net/');
 
 async function tryLocal() {
   const local = new MongoClient(LOCAL, { serverSelectionTimeoutMS: 1500 });
@@ -17,7 +17,7 @@ async function tryLocal() {
     return local;
   } catch {
     await local.close();
-    return null;
+    return null;``
   }
 }
 
